@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get SmartPLS 4.1 (Latest) - ThinkLab Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Custom Font Import */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Brand Colors Configuration */
+        .bg-brand-navy { background-color: #003366; }
+        .text-brand-navy { color: #003366; }
+        .border-brand-navy { border-color: #003366; }
+        .hover-bg-brand-navy:hover { background-color: #002244; }
+        
+        .bg-brand-light { background-color: #f0f4f8; }
+        
+        .btn-primary {
+            background-color: #003366;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #002244;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 51, 102, 0.2);
+        }
+        
+        /* BKash Brand Color */
+        .bg-bkash { background-color: #e2136e; }
+        .text-bkash { color: #e2136e; }
+
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
+        
+        /* Table Styles */
+        .table-row-hover:hover { background-color: #f8fafc; }
+
+        /* Card Animation Styles */
+        .catalog-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .catalog-card:active {
+            transform: scale(0.98);
+        }
+
+        /* Modal Transitions */
+        .modal {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        /* Legal Tab Active State */
+        .legal-tab-btn.active {
+            border-bottom: 2px solid #003366;
+            color: #003366;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-brand-navy rounded-lg flex items-center justify-center text-white shadow-lg">
+                        <i class="fa-solid fa-brain text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold text-brand-navy tracking-tight">ThinkLab Analytics</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-brand-navy font-medium transition">About</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-brand-navy font-medium transition">Pricing</a>
+                    <a href="#catalog" class="text-gray-600 hover:text-brand-navy font-medium transition">Software Catalog</a>
+                    <!-- Nav Button: Generic -->
+                    <button onclick="openOrderModal('General License Inquiry', 'Check Pricing Table')" class="btn-primary px-6 py-2.5 rounded-full font-semibold text-sm shadow-md">Get License</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-b from-blue-50 to-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Text Content -->
+                <div class="max-w-2xl">
+                    <!-- Victory Month Badge -->
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-50 border border-green-200 text-green-800 text-xs font-bold mb-6 uppercase tracking-wider shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
+                        Victory Month Special (December)
+                    </div>
+                    <h1 class="text-4xl lg:text-6xl font-bold tracking-tight text-gray-900 mb-6 leading-tight">
+                        Master Both <span class="text-brand-navy">Qualitative & Quantitative</span> Analysis.
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Commemorating the spirit of Victory Day, ThinkLab Analytics presents an exclusive opportunity to equip your research with industry standards. Secure lifetime licenses for <strong>SmartPLS 4.1 (Latest)</strong> and <strong>NVivo 15 (Latest)</strong> at preferential December rates.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#pricing" class="btn-primary px-8 py-4 rounded-lg font-bold text-center flex items-center justify-center gap-2 shadow-lg hover:shadow-xl">
+                            View Offer Price <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="#catalog" class="px-8 py-4 rounded-lg font-bold text-brand-navy border-2 border-brand-navy/20 hover:bg-blue-50 text-center transition">
+                            Browse Catalog
+                        </a>
+                    </div>
+                    <div class="mt-8 flex items-center gap-4 text-sm text-gray-500">
+                        <div class="flex -space-x-2">
+                            <img class="w-8 h-8 rounded-full border-2 border-white" src="https://i.pravatar.cc/100?img=1" alt="User">
+                            <img class="w-8 h-8 rounded-full border-2 border-white" src="https://i.pravatar.cc/100?img=2" alt="User">
+                            <img class="w-8 h-8 rounded-full border-2 border-white" src="https://i.pravatar.cc/100?img=3" alt="User">
+                            <div class="w-8 h-8 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center text-xs font-bold">+2k</div>
+                        </div>
+                        <p>Trusted by 2,000+ Researchers</p>
+                    </div>
+                </div>
+                
+                <!-- Hero Visual - Dual Product Showcase -->
+                <div class="relative lg:ml-auto w-full">
+                    <div class="absolute -inset-4 bg-brand-navy/5 rounded-2xl transform rotate-3 blur-lg"></div>
+                    
+                    <div class="grid grid-cols-2 gap-4 relative h-full">
+                        
+                        <!-- SmartPLS Card (Left) -->
+                        <div onclick="document.getElementById('pricing').scrollIntoView({behavior: 'smooth'})" class="bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden transform hover:-translate-y-1 transition-all duration-300 flex flex-col h-full cursor-pointer hover:shadow-2xl hover:border-blue-300">
+                            <div class="bg-blue-50 border-b border-blue-100 px-3 py-3 flex items-center justify-between gap-2">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-8 h-8 bg-white rounded-md flex items-center justify-center shadow-sm shrink-0 border border-blue-100 p-1">
+                                        <img src="https://libguides.jgu.edu.in/assets/users/_Arjun.K/PLS.jpg" alt="SmartPLS Logo" class="w-full h-full object-contain">
+                                    </div>
+                                    <div class="text-xs font-bold text-brand-navy uppercase tracking-wider leading-tight">SmartPLS<br>4.1 (Latest)</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-[10px] text-red-500 line-through font-medium">৳12,700</div>
+                                    <div class="text-xs font-bold text-gray-900">৳5,999</div>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 bg-white flex items-center justify-center flex-grow">
+                                <svg viewBox="0 0 300 200" class="w-full h-auto drop-shadow-sm max-h-32" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <marker id="arrow-sm" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+                                            <path d="M0,0 L0,6 L7,3 z" fill="#94a3b8" />
+                                        </marker>
+                                    </defs>
+                                    <circle cx="60" cy="100" r="25" fill="#f0f9ff" stroke="#003366" stroke-width="2"/>
+                                    <circle cx="240" cy="100" r="25" fill="#f0f9ff" stroke="#003366" stroke-width="2"/>
+                                    <line x1="90" y1="100" x2="210" y2="100" stroke="#003366" stroke-width="2" marker-end="url(#arrow-sm)" />
+                                    <text x="150" y="90" text-anchor="middle" font-size="10" fill="#64748b" font-weight="bold">Path Coeff.</text>
+                                    <text x="60" y="140" text-anchor="middle" font-size="10" fill="#003366" font-weight="bold">Latent 1</text>
+                                    <text x="240" y="140" text-anchor="middle" font-size="10" fill="#003366" font-weight="bold">Latent 2</text>
+                                </svg>
+                            </div>
+                            
+                            <div class="px-4 py-3 bg-gray-50 border-t border-gray-100 text-center">
+                                <span class="text-xs font-bold text-red-600 bg-red-100 px-2 py-1 rounded-full">Save 53%</span>
+                                <span class="block text-xs font-medium text-brand-navy mt-1">Quantitative Mastery</span>
+                            </div>
+                        </div>
+
+                        <!-- NVivo Card (Right) -->
+                        <div onclick="document.getElementById('pricing').scrollIntoView({behavior: 'smooth'})" class="bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden transform hover:-translate-y-1 transition-all duration-300 flex flex-col h-full cursor-pointer hover:shadow-2xl hover:border-green-300">
+                            <div class="bg-green-50 border-b border-green-100 px-3 py-3 flex items-center justify-between gap-2">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-8 h-8 bg-white rounded-md flex items-center justify-center shadow-sm shrink-0 border border-green-100 p-1">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROUsKCeE0Gnj9ALDxFYLUgEUuy_Pni5x8SPQ&s" alt="NVivo Logo" class="w-full h-full object-contain">
+                                    </div>
+                                    <div class="text-xs font-bold text-green-800 uppercase tracking-wider leading-tight">NVivo<br>15 (Latest)</div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-[10px] text-red-500 line-through font-medium">৳14,000</div>
+                                    <div class="text-xs font-bold text-gray-900">৳5,999</div>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 bg-white flex items-center justify-center flex-grow">
+                                <svg viewBox="0 0 300 200" class="w-full h-auto drop-shadow-sm max-h-32" xmlns="http://www.w3.org/2000/svg">
+                                    <text x="150" y="100" text-anchor="middle" font-size="24" fill="#166534" font-weight="bold">THEMES</text>
+                                    <text x="80" y="60" text-anchor="middle" font-size="14" fill="#22c55e" opacity="0.7">Interviews</text>
+                                    <text x="220" y="70" text-anchor="middle" font-size="16" fill="#15803d" opacity="0.8">Coding</text>
+                                    <text x="70" y="150" text-anchor="middle" font-size="16" fill="#15803d" opacity="0.8">Analysis</text>
+                                    <text x="230" y="140" text-anchor="middle" font-size="14" fill="#22c55e" opacity="0.7">Insights</text>
+                                    <circle cx="150" cy="100" r="60" fill="none" stroke="#22c55e" stroke-width="1" stroke-dasharray="4"/>
+                                </svg>
+                            </div>
+                            
+                            <div class="px-4 py-3 bg-gray-50 border-t border-gray-100 text-center">
+                                <span class="text-xs font-bold text-red-600 bg-red-100 px-2 py-1 rounded-full">Save 57%</span>
+                                <span class="block text-xs font-medium text-green-800 mt-1">Qualitative Insight</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section id="features" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Why Purchase Software from ThinkLab Analytics?</h2>
+                <p class="text-gray-600 text-lg">We are committed to providing genuine software and exceptional support to the academic community in Bangladesh.</p>
+            </div>
+            
+            <!-- Grid automatically handles 6 items as 2 rows of 3 -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
+                <!-- Feature 1 -->
+                <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:border-blue-200 transition group h-full">
+                    <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center mb-6 text-brand-navy group-hover:scale-110 transition">
+                        <i class="fa-solid fa-certificate text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">Genuine Lifetime Licenses</h3>
+                    <p class="text-sm text-gray-600">We provide authentic, perpetual licenses that never expire, ensuring long-term access for your research.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:border-blue-200 transition group h-full">
+                    <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center mb-6 text-brand-navy group-hover:scale-110 transition">
+                        <i class="fa-solid fa-headset text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">Dedicated Local Support</h3>
+                    <p class="text-sm text-gray-600">Our Dhaka-based team offers prompt technical support via phone and WhatsApp to resolve any queries.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:border-blue-200 transition group h-full">
+                    <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center mb-6 text-brand-navy group-hover:scale-110 transition">
+                        <i class="fa-solid fa-hand-holding-dollar text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">Affordable Academic Pricing</h3>
+                    <p class="text-sm text-gray-600">We offer special discounted rates for students and researchers in Bangladesh, making premium tools accessible.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:border-blue-200 transition group h-full">
+                    <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center mb-6 text-brand-navy group-hover:scale-110 transition">
+                        <i class="fa-solid fa-thumbs-up text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">100% Satisfaction Guarantee</h3>
+                    <p class="text-sm text-gray-600">We guarantee successful installation on your device. If it doesn't work as promised, we provide a full refund.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:border-blue-200 transition group h-full">
+                    <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center mb-6 text-brand-navy group-hover:scale-110 transition">
+                        <i class="fa-solid fa-user-shield text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">Engineer Verified Security</h3>
+                    <p class="text-sm text-gray-600">Every software package is manually inspected by our in-house engineers to ensure zero malware and full operational integrity.</p>
+                </div>
+
+                <!-- Feature 6 (New) -->
+                <div class="p-8 rounded-2xl bg-gray-50 border border-gray-100 hover:border-blue-200 transition group h-full">
+                    <div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center mb-6 text-brand-navy group-hover:scale-110 transition">
+                        <i class="fa-solid fa-rocket text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-3">Digital Delivery</h3>
+                    <p class="text-sm text-gray-600">Receive your license keys and download instructions via email within 48 to 72 hours of payment confirmation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section (SmartPLS Highlight) -->
+    <section id="pricing" class="py-20 bg-brand-navy relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
+            <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-blue-400 blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-blue-600 blur-3xl"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 text-white">
+                <div class="inline-block px-4 py-1 rounded-full bg-red-600/90 text-white text-sm font-bold mb-4 uppercase tracking-widest border border-red-500 shadow-lg">
+                    Victory Month Offer 🇧🇩
+                </div>
+                <h2 class="text-3xl lg:text-4xl font-bold mb-6">Exclusive December Pricing</h2>
+                <p class="text-blue-100 text-lg max-w-2xl mx-auto">Celebrating the 54th Victory Day of Bangladesh with special academic discounts. One-time payment. Lifetime access.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- SmartPLS 4.1 Card -->
+                <div class="bg-white rounded-2xl p-8 shadow-2xl transform hover:-translate-y-1 transition duration-300 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-blue-600 px-4 py-1 rounded-bl-lg text-xs font-bold text-white uppercase tracking-wider">Top Seller</div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-blue-50 rounded-lg flex items-center justify-center p-2 border border-blue-100">
+                            <!-- SmartPLS Logo -->
+                            <img src="https://libguides.jgu.edu.in/assets/users/_Arjun.K/PLS.jpg" alt="SmartPLS Logo" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">SmartPLS 4.1 (Latest)</h3>
+                            <p class="text-sm text-gray-500">Professional Edition</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="flex items-center gap-3 mb-1">
+                            <span class="text-xl text-red-400 line-through font-medium decoration-2">৳12,700</span>
+                            <span class="bg-red-100 text-red-700 text-xs font-bold px-2 py-0.5 rounded-full border border-red-200">Save 53%</span>
+                        </div>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-2xl font-bold text-gray-600">From</span>
+                            <span class="text-5xl font-bold text-gray-900 tracking-tight">৳5,999</span>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2 font-medium">Windows: ৳5,999 | MacOS: ৳6,999</p>
+                    </div>
+
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <i class="fa-solid fa-check text-green-600"></i> Lifetime Validity
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <i class="fa-solid fa-check text-green-600"></i> 1 Device Activation
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <i class="fa-solid fa-check text-green-600"></i> Full Professional Features
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <i class="fa-solid fa-check text-green-600"></i> Instant Delivery
+                        </li>
+                    </ul>
+                    <button onclick="openOrderModal('SmartPLS 4.1 (Latest)', '5,999 (Win) / 6,999 (Mac)')" class="w-full py-4 rounded-xl bg-brand-navy text-white font-bold hover:bg-opacity-90 transition shadow-lg">
+                        Claim Victory Offer
+                    </button>
+                </div>
+
+                <!-- NVivo 15 Card -->
+                <div class="bg-white/95 backdrop-blur-sm rounded-2xl p-8 shadow-xl transform hover:-translate-y-1 transition duration-300 relative overflow-hidden">
+                     <div class="absolute top-0 right-0 bg-green-600 px-4 py-1 rounded-bl-lg text-xs font-bold text-white uppercase tracking-wider">Qualitative Pro</div>
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 bg-green-50 rounded-lg flex items-center justify-center p-2 border border-green-100">
+                            <!-- NVivo Logo -->
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROUsKCeE0Gnj9ALDxFYLUgEUuy_Pni5x8SPQ&s" alt="NVivo Logo" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-900">NVivo 15 (Latest)</h3>
+                            <p class="text-sm text-gray-500">Full License</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="flex items-center gap-3 mb-1">
+                            <span class="text-xl text-red-400 line-through font-medium decoration-2">৳14,000</span>
+                            <span class="bg-red-100 text-red-700 text-xs font-bold px-2 py-0.5 rounded-full border border-red-200">Save 57%</span>
+                        </div>
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-5xl font-bold text-gray-900 tracking-tight">৳5,999</span>
+                            <span class="text-gray-500 text-base font-medium">/ BDT</span>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2 font-medium">One-time payment for lifetime license</p>
+                    </div>
+
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <i class="fa-solid fa-check text-green-600"></i> Lifetime Validity
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <i class="fa-solid fa-check text-green-600"></i> 1 Device Activation
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <i class="fa-solid fa-check text-green-600"></i> Full Professional Features
+                        </li>
+                        <li class="flex items-center gap-3 text-gray-600">
+                            <i class="fa-solid fa-check text-green-600"></i> Works on Windows & Mac
+                        </li>
+                    </ul>
+                    <button onclick="openOrderModal('NVivo 15 (Latest)', '5,999')" class="w-full py-4 rounded-xl border-2 border-brand-navy text-brand-navy font-bold hover:bg-blue-50 transition">
+                        Claim Victory Offer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other Software Catalog -->
+    <section id="catalog" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900">Our Software Catalog</h2>
+                <p class="text-gray-600 mt-2 text-lg">Essential tools to complete your research ecosystem. <span class="text-brand-navy font-bold">Click on any card to reveal pricing.</span></p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- SmartPLS Card -->
+                <div onclick="togglePrice(this)" class="catalog-card bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-col items-center text-center cursor-pointer relative overflow-hidden h-72 group">
+                    <div class="card-front w-full h-full flex flex-col items-center justify-between transition-opacity duration-300">
+                        <div class="h-16 flex items-center justify-center">
+                            <img src="https://libguides.jgu.edu.in/assets/users/_Arjun.K/PLS.jpg" alt="SmartPLS Logo" class="h-12 w-auto object-contain">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">SmartPLS 4.1 (Latest)</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">The premier software for Partial Least Squares Structural Equation Modeling (PLS-SEM) analysis.</p>
+                        <p class="text-xs font-bold text-brand-navy mt-4 flex items-center gap-2"><i class="fa-solid fa-eye"></i> View Pricing</p>
+                    </div>
+                    <div class="card-back hidden w-full h-full flex-col items-center justify-center transition-opacity duration-300">
+                         <h3 class="text-lg font-bold text-gray-900 mb-4">SmartPLS 4.1 (Latest)</h3>
+                         <div class="w-full space-y-2 mb-6">
+                            <div class="flex justify-between items-center text-sm border-b border-gray-50 pb-1">
+                                <span class="text-gray-600"><i class="fa-brands fa-windows"></i> Win</span>
+                                <span class="font-bold text-brand-navy">৳5,999</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-600"><i class="fa-brands fa-apple"></i> Mac</span>
+                                <span class="font-bold text-brand-navy">৳6,999</span>
+                            </div>
+                        </div>
+                        <!-- Updated to trigger Modal with Dual Price info -->
+                        <button onclick="event.stopPropagation(); openOrderModal('SmartPLS 4.1 (Latest)', '5,999 (Win) / 6,999 (Mac)')" class="w-full py-2 rounded-lg bg-brand-navy text-white font-semibold hover:bg-opacity-90 transition text-sm">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- SPSS Card -->
+                <div onclick="togglePrice(this)" class="catalog-card bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-col items-center text-center cursor-pointer relative overflow-hidden h-72 group">
+                    <div class="card-front w-full h-full flex flex-col items-center justify-between transition-opacity duration-300">
+                        <div class="h-16 flex items-center justify-center">
+                            <img src="https://secure.touchnet.net/C21575_ustores/web/uploaded_images/store_80/SPSS_Full_Icon.png" alt="SPSS Logo" class="h-12 w-auto object-contain">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">SPSS 31 (Latest)</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">The global standard for statistical analysis in social science research and data management.</p>
+                        <p class="text-xs font-bold text-brand-navy mt-4 flex items-center gap-2"><i class="fa-solid fa-eye"></i> View Pricing</p>
+                    </div>
+                    <div class="card-back hidden w-full h-full flex-col items-center justify-center transition-opacity duration-300">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4">SPSS 31 (Latest)</h3>
+                        <div class="w-full space-y-2 mb-6">
+                            <div class="flex justify-between items-center text-sm border-b border-gray-50 pb-1">
+                                <span class="text-gray-600"><i class="fa-brands fa-windows"></i> Win</span>
+                                <span class="font-bold text-brand-navy">৳5,999</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-600"><i class="fa-brands fa-apple"></i> Mac</span>
+                                <span class="font-bold text-brand-navy">৳6,999</span>
+                            </div>
+                        </div>
+                        <button onclick="event.stopPropagation(); openOrderModal('SPSS 31 (Latest)', '5,999 (Win) / 6,999 (Mac)')" class="w-full py-2 rounded-lg bg-brand-navy text-white font-semibold hover:bg-opacity-90 transition text-sm">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- NVivo Card -->
+                <div onclick="togglePrice(this)" class="catalog-card bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-col items-center text-center cursor-pointer relative overflow-hidden h-72 group">
+                    <div class="card-front w-full h-full flex flex-col items-center justify-between transition-opacity duration-300">
+                        <div class="h-16 flex items-center justify-center">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROUsKCeE0Gnj9ALDxFYLUgEUuy_Pni5x8SPQ&s" alt="NVivo Logo" class="h-12 w-auto object-contain">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">NVivo 15 (Latest)</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Advanced qualitative data analysis software for organizing unstructured text and media.</p>
+                        <p class="text-xs font-bold text-brand-navy mt-4 flex items-center gap-2"><i class="fa-solid fa-eye"></i> View Pricing</p>
+                    </div>
+                    <div class="card-back hidden w-full h-full flex-col items-center justify-center transition-opacity duration-300">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4">NVivo 15 (Latest)</h3>
+                        <div class="w-full space-y-2 mb-6">
+                            <div class="flex justify-between items-center text-sm border-b border-gray-50 pb-1">
+                                <span class="text-gray-600"><i class="fa-brands fa-windows"></i> Win</span>
+                                <span class="font-bold text-brand-navy">৳5,999</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-600"><i class="fa-brands fa-apple"></i> Mac</span>
+                                <span class="font-bold text-brand-navy">৳5,999</span>
+                            </div>
+                        </div>
+                        <button onclick="event.stopPropagation(); openOrderModal('NVivo 15 (Latest)', '5,999')" class="w-full py-2 rounded-lg bg-brand-navy text-white font-semibold hover:bg-opacity-90 transition text-sm">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- Atlas.ti Card -->
+                <div onclick="togglePrice(this)" class="catalog-card bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-col items-center text-center cursor-pointer relative overflow-hidden h-72 group">
+                    <div class="card-front w-full h-full flex flex-col items-center justify-between transition-opacity duration-300">
+                        <div class="h-16 flex items-center justify-center">
+                            <img src="https://insmac.org/uploads/posts/2019-08/1567062219_atlas.png" alt="Atlas.ti Logo" class="h-10 w-auto object-contain">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Atlas.ti</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">A powerful workbench for the qualitative analysis of large bodies of textual and graphical data.</p>
+                        <p class="text-xs font-bold text-brand-navy mt-4 flex items-center gap-2"><i class="fa-solid fa-eye"></i> View Pricing</p>
+                    </div>
+                    <div class="card-back hidden w-full h-full flex-col items-center justify-center transition-opacity duration-300">
+                        <h3 class="text-lg font-bold text-gray-900 mb-4">Atlas.ti</h3>
+                        <div class="w-full space-y-2 mb-6">
+                            <div class="flex justify-between items-center text-sm border-b border-gray-50 pb-1">
+                                <span class="text-gray-600"><i class="fa-brands fa-windows"></i> Win</span>
+                                <span class="font-bold text-brand-navy">৳6,999</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-600"><i class="fa-brands fa-apple"></i> Mac</span>
+                                <span class="font-bold text-brand-navy">৳5,999</span>
+                            </div>
+                        </div>
+                        <button onclick="event.stopPropagation(); openOrderModal('Atlas.ti', '6,999 (Win) / 5,999 (Mac)')" class="w-full py-2 rounded-lg bg-brand-navy text-white font-semibold hover:bg-opacity-90 transition text-sm">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- Endnote Card -->
+                <div onclick="togglePrice(this)" class="catalog-card bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-col items-center text-center cursor-pointer relative overflow-hidden h-72 group">
+                    <div class="card-front w-full h-full flex flex-col items-center justify-between transition-opacity duration-300">
+                        <div class="h-16 flex items-center justify-center">
+                            <img src="https://logo.clearbit.com/endnote.com" alt="Endnote Logo" class="h-10 w-auto object-contain">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Endnote 21</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">The essential software tool for publishing and managing bibliographies, citations, and references.</p>
+                        <p class="text-xs font-bold text-brand-navy mt-4 flex items-center gap-2"><i class="fa-solid fa-eye"></i> View Pricing</p>
+                    </div>
+                    <div class="card-back hidden w-full h-full flex-col items-center justify-center transition-opacity duration-300">
+                         <h3 class="text-lg font-bold text-gray-900 mb-4">Endnote 21</h3>
+                        <div class="w-full space-y-2 mb-6">
+                            <div class="flex justify-between items-center text-sm border-b border-gray-50 pb-1">
+                                <span class="text-gray-600"><i class="fa-brands fa-windows"></i> Win</span>
+                                <span class="font-bold text-brand-navy">৳4,999</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-600"><i class="fa-brands fa-apple"></i> Mac</span>
+                                <span class="font-bold text-brand-navy">৳4,999</span>
+                            </div>
+                        </div>
+                        <button onclick="event.stopPropagation(); openOrderModal('Endnote 21', '4,999')" class="w-full py-2 rounded-lg bg-brand-navy text-white font-semibold hover:bg-opacity-90 transition text-sm">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- Office 365 Card -->
+                <div onclick="togglePrice(this)" class="catalog-card bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-col items-center text-center cursor-pointer relative overflow-hidden h-72 group">
+                    <div class="card-front w-full h-full flex flex-col items-center justify-between transition-opacity duration-300">
+                        <div class="h-16 flex items-center justify-center">
+                            <img src="https://images.seeklogo.com/logo-png/46/1/microsoft-365-logo-png_seeklogo-465813.png" alt="Office 365 Logo" class="h-10 w-auto object-contain">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">MS Office 365</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Cloud-based productivity suite including Word, Excel, PowerPoint, and 1TB Cloud Storage.</p>
+                        <p class="text-xs font-bold text-brand-navy mt-4 flex items-center gap-2"><i class="fa-solid fa-eye"></i> View Pricing</p>
+                    </div>
+                    <div class="card-back hidden w-full h-full flex-col items-center justify-center transition-opacity duration-300">
+                         <h3 class="text-lg font-bold text-gray-900 mb-4">MS Office 365</h3>
+                        <div class="w-full space-y-2 mb-6">
+                            <div class="flex justify-between items-center text-sm border-b border-gray-50 pb-1">
+                                <span class="text-gray-600"><i class="fa-brands fa-windows"></i> Win</span>
+                                <span class="font-bold text-brand-navy">৳4,999</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-600"><i class="fa-brands fa-apple"></i> Mac</span>
+                                <span class="font-bold text-brand-navy">৳4,999</span>
+                            </div>
+                        </div>
+                        <button onclick="event.stopPropagation(); openOrderModal('MS Office 365', '4,999')" class="w-full py-2 rounded-lg bg-brand-navy text-white font-semibold hover:bg-opacity-90 transition text-sm">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- Adobe Card -->
+                <div onclick="togglePrice(this)" class="catalog-card bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-col items-center text-center cursor-pointer relative overflow-hidden h-72 group">
+                    <div class="card-front w-full h-full flex flex-col items-center justify-between transition-opacity duration-300">
+                        <div class="h-16 flex items-center justify-center">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Adobe_Systems_logo_and_wordmark.svg/1477px-Adobe_Systems_logo_and_wordmark.svg.png" alt="Adobe Logo" class="h-10 w-auto object-contain">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Adobe All Apps 2025 (Latest)</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">Comprehensive creative toolkit including Photoshop, Illustrator, and Premiere Pro.</p>
+                        <p class="text-xs font-bold text-brand-navy mt-4 flex items-center gap-2"><i class="fa-solid fa-eye"></i> View Pricing</p>
+                    </div>
+                    <div class="card-back hidden w-full h-full flex-col items-center justify-center transition-opacity duration-300">
+                         <h3 class="text-lg font-bold text-gray-900 mb-4">Adobe All Apps 2025 (Latest)</h3>
+                        <div class="w-full space-y-2 mb-6">
+                            <div class="flex justify-between items-center text-sm border-b border-gray-50 pb-1">
+                                <span class="text-gray-600"><i class="fa-brands fa-windows"></i> Win</span>
+                                <span class="font-bold text-brand-navy">৳5,499</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-gray-600"><i class="fa-brands fa-apple"></i> Mac</span>
+                                <span class="font-bold text-brand-navy">৳5,499</span>
+                            </div>
+                        </div>
+                        <button onclick="event.stopPropagation(); openOrderModal('Adobe All Apps 2025 (Latest)', '5,499')" class="w-full py-2 rounded-lg bg-brand-navy text-white font-semibold hover:bg-opacity-90 transition text-sm">Order Now</button>
+                    </div>
+                </div>
+
+                <!-- Windows 11 Card -->
+                <div onclick="togglePrice(this)" class="catalog-card bg-white rounded-xl shadow-sm border border-gray-200 p-6 flex flex-col items-center text-center cursor-pointer relative overflow-hidden h-72 group">
+                    <div class="card-front w-full h-full flex flex-col items-center justify-between transition-opacity duration-300">
+                        <div class="h-16 flex items-center justify-center">
+                            <img src="https://logo.clearbit.com/microsoft.com" alt="Windows Logo" class="h-10 w-auto object-contain">
+                        </div>
+                        <h3 class="text-lg font-bold text-gray-900">Windows 11 Pro</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">The latest operating system from Microsoft designed for hybrid work and productivity.</p>
+                        <p class="text-xs font-bold text-brand-navy mt-4 flex items-center gap-2"><i class="fa-solid fa-eye"></i> View Pricing</p>
+                    </div>
+                    <div class="card-back hidden w-full h-full flex-col items-center justify-center transition-opacity duration-300">
+                         <h3 class="text-lg font-bold text-gray-900 mb-4">Windows 11 Pro</h3>
+                        <div class="w-full space-y-2 mb-6">
+                            <div class="flex justify-between items-center text-sm border-b border-gray-50 pb-1">
+                                <span class="text-gray-600"><i class="fa-brands fa-windows"></i> Win</span>
+                                <span class="font-bold text-brand-navy">৳4,999</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm opacity-40">
+                                <span class="text-gray-600"><i class="fa-brands fa-apple"></i> Mac</span>
+                                <span class="font-bold text-gray-400">N/A</span>
+                            </div>
+                        </div>
+                        <button onclick="event.stopPropagation(); openOrderModal('Windows 11 Pro', '4,999')" class="w-full py-2 rounded-lg bg-brand-navy text-white font-semibold hover:bg-opacity-90 transition text-sm">Order Now</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 bg-brand-navy rounded flex items-center justify-center text-white">
+                            <i class="fa-solid fa-brain text-sm"></i>
+                        </div>
+                        <span class="text-xl font-bold text-brand-navy">ThinkLab Analytics</span>
+                    </div>
+                    <p class="text-gray-500 max-w-sm">Empowering academic research in Dhaka with premium analysis software and support.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <li><i class="fa-brands fa-whatsapp w-6"></i> +880 1910-727242</li>
+                        <li><i class="fa-solid fa-envelope w-6"></i> support@thinklab.com</li>
+                        <li><i class="fa-solid fa-location-dot w-6"></i> Dhaka, Bangladesh</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 mb-4">Legal</h4>
+                    <ul class="space-y-2 text-gray-600">
+                        <!-- Updated: Added event.preventDefault() to stop page jumping -->
+                        <li><a href="#" onclick="event.preventDefault(); openLegalModal('privacy')" class="hover:text-brand-navy">Privacy Policy</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); openLegalModal('terms')" class="hover:text-brand-navy">Terms of Service</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); openLegalModal('refund')" class="hover:text-brand-navy">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-100 pt-8 text-center text-gray-400 text-sm">
+                &copy; 2025 ThinkLab Analytics. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Payment Modal (Hidden by Default) -->
+    <div id="orderModal" class="modal fixed inset-0 z-[100] flex items-center justify-center bg-gray-900/60 backdrop-blur-sm p-4">
+        <div class="modal-content bg-white w-full max-w-md rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+            
+            <!-- Modal Header -->
+            <div class="bg-brand-navy px-6 py-4 flex justify-between items-center">
+                <h3 class="text-white font-bold text-lg">Secure Your License</h3>
+                <button onclick="closeOrderModal()" class="text-white/80 hover:text-white transition">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-6">
+                <!-- Step 1: BKash Payment -->
+                <div class="mb-6">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-bkash text-white flex items-center justify-center font-bold text-sm">1</div>
+                        <h4 class="font-bold text-gray-900">Make Payment via bKash</h4>
+                    </div>
+                    <div class="bg-pink-50 border border-pink-100 rounded-lg p-4 text-center">
+                        <p class="text-sm text-gray-600 mb-1">Send Money (Personal)</p>
+                        <p class="text-2xl font-bold text-bkash font-mono tracking-wider selection:bg-pink-200">01910-727242</p>
+                        <!-- Added Payment Amount Display -->
+                        <div class="mt-3 pt-3 border-t border-pink-100">
+                            <p class="text-xs text-gray-500 uppercase tracking-wide">Amount to Pay</p>
+                            <p id="modalPriceAmount" class="text-xl font-bold text-gray-900">৳6,000</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Confirmation -->
+                <div class="mb-8">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-8 h-8 rounded-full bg-green-600 text-white flex items-center justify-center font-bold text-sm">2</div>
+                        <h4 class="font-bold text-gray-900">Confirm Order on WhatsApp</h4>
+                    </div>
+                    <p class="text-sm text-gray-600 mb-3 ml-11">After payment, please send the following details to our official WhatsApp:</p>
+                    <ul class="ml-11 text-sm text-gray-500 space-y-1 list-disc list-outside pl-4 mb-4">
+                        <li>Payment TrxID</li>
+                        <li>Your Full Name</li>
+                        <li>Phone Number</li>
+                        <li>Email Address</li>
+                        <li>Product Name (e.g. <span id="modalProductName">Software</span>)</li>
+                    </ul>
+                    
+                    <a id="whatsappLink" href="#" target="_blank" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-green-500 text-white font-bold hover:bg-green-600 transition shadow-lg shadow-green-200 ml-0">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Send Details Now
+                    </a>
+                </div>
+                
+                <p class="text-center text-xs text-gray-400">Our team will verify your payment and email the license key instantly.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Legal Documents Modal (Hidden by Default) -->
+    <div id="legalModal" class="modal fixed inset-0 z-[100] flex items-center justify-center bg-gray-900/60 backdrop-blur-sm p-4">
+        <div class="modal-content bg-white w-full max-w-4xl h-[80vh] rounded-2xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col">
+            
+            <!-- Legal Modal Header -->
+            <div class="bg-brand-navy px-6 py-4 flex justify-between items-center shrink-0">
+                <div class="flex items-center gap-3">
+                    <i class="fa-solid fa-scale-balanced text-white/80"></i>
+                    <h3 class="text-white font-bold text-lg">Legal Information</h3>
+                </div>
+                <button onclick="closeLegalModal()" class="text-white/80 hover:text-white transition">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Legal Modal Content Layout -->
+            <div class="flex flex-col md:flex-row h-full overflow-hidden">
+                <!-- Sidebar -->
+                <div class="w-full md:w-64 bg-gray-50 border-b md:border-b-0 md:border-r border-gray-200 shrink-0 overflow-y-auto">
+                    <nav class="p-4 space-y-1">
+                        <button onclick="switchLegalTab('privacy')" id="btn-privacy" class="legal-tab-btn w-full text-left px-4 py-3 rounded-md text-gray-600 hover:bg-gray-100 transition flex items-center gap-3 text-sm font-medium">
+                            Privacy Policy
+                        </button>
+                        <button onclick="switchLegalTab('terms')" id="btn-terms" class="legal-tab-btn w-full text-left px-4 py-3 rounded-md text-gray-600 hover:bg-gray-100 transition flex items-center gap-3 text-sm font-medium">
+                            Terms of Service
+                        </button>
+                        <button onclick="switchLegalTab('refund')" id="btn-refund" class="legal-tab-btn w-full text-left px-4 py-3 rounded-md text-gray-600 hover:bg-gray-100 transition flex items-center gap-3 text-sm font-medium">
+                            Refund Policy
+                        </button>
+                    </nav>
+                </div>
+
+                <!-- Main Text Area -->
+                <div class="flex-1 overflow-y-auto p-8 bg-white">
+                    <!-- Privacy Policy Content -->
+                    <div id="content-privacy" class="legal-content hidden">
+                        <h2 class="text-2xl font-bold text-brand-navy mb-4">Privacy Policy</h2>
+                        <p class="text-gray-500 text-xs mb-6">Last Updated: December 2025</p>
+                        <div class="space-y-4 text-sm text-gray-600 leading-relaxed">
+                            <p>ThinkLab Analytics is committed to maintaining the confidentiality and integrity of your personal data. This Privacy Policy outlines the methodologies employed in the collection, utilization, and protection of information.</p>
+                            <h4 class="font-bold text-gray-900 mt-4">1. Data Collection Protocols</h4>
+                            <p>We collect only the minimum data required to facilitate license activation and transaction verification. This includes:</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li><strong>Identity Data:</strong> Full name as provided during the order confirmation.</li>
+                                <li><strong>Contact Data:</strong> Email address and phone number for delivery of license keys.</li>
+                                <li><strong>Transaction Data:</strong> bKash Transaction ID (TrxID) for payment reconciliation.</li>
+                            </ul>
+                            <h4 class="font-bold text-gray-900 mt-4">2. Usage of Information</h4>
+                            <p>Your data is utilized exclusively for processing your order, providing technical support, and notifying you of critical updates. We do not sell or trade your personally identifiable information.</p>
+                        </div>
+                    </div>
+
+                    <!-- Terms Content -->
+                    <div id="content-terms" class="legal-content hidden">
+                        <h2 class="text-2xl font-bold text-brand-navy mb-4">Terms of Service</h2>
+                        <p class="text-gray-500 text-xs mb-6">Last Updated: December 2025</p>
+                        <div class="space-y-4 text-sm text-gray-600 leading-relaxed">
+                            <p>By purchasing software licenses from ThinkLab Analytics, you agree to be bound by the following terms and conditions.</p>
+                            <h4 class="font-bold text-gray-900 mt-4">1. License Grant and Validity</h4>
+                            <p>The "Lifetime License" refers to the operational life of the specific software version purchased (e.g., SmartPLS 4.1 or NVivo 15) on a single device.</p>
+                            <h4 class="font-bold text-gray-900 mt-4">2. Installation Services</h4>
+                            <p>ThinkLab Analytics provides complimentary installation support via remote assistance. It is the user's responsibility to ensure their hardware meets the minimum system requirements.</p>
+                            <h4 class="font-bold text-gray-900 mt-4">3. Prohibited Activities</h4>
+                            <p>Redistribution or resale of license keys is strictly prohibited and will result in immediate license revocation without refund.</p>
+                        </div>
+                    </div>
+
+                    <!-- Refund Content -->
+                    <div id="content-refund" class="legal-content hidden">
+                        <h2 class="text-2xl font-bold text-brand-navy mb-4">Refund Policy</h2>
+                        <p class="text-gray-500 text-xs mb-6">Last Updated: December 2025</p>
+                        <div class="space-y-4 text-sm text-gray-600 leading-relaxed">
+                            <p>At ThinkLab Analytics, we prioritize customer satisfaction. Our refund policy is designed to be fair and transparent.</p>
+                            <h4 class="font-bold text-gray-900 mt-4">1. Eligibility for Refund</h4>
+                            <p>You are eligible for a <strong>100% refund</strong> if:</p>
+                            <ul class="list-disc pl-5 space-y-1">
+                                <li>The software fails to activate on your device despite our support engineers' assistance.</li>
+                                <li>You do not receive your license key within 72 hours of payment confirmation.</li>
+                            </ul>
+                            <h4 class="font-bold text-gray-900 mt-4">2. Non-Refundable Scenarios</h4>
+                            <p>Refunds will not be issued for "change of mind" or incompatible hardware if clearly stated requirements were ignored.</p>
+                            <h4 class="font-bold text-gray-900 mt-4">3. Processing Time</h4>
+                            <p>Approved refunds are processed via bKash within 3-5 business days to the original mobile number.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS for Logic -->
+    <script>
+        // Flip Card Logic
+        function togglePrice(element) {
+            const front = element.querySelector('.card-front');
+            const back = element.querySelector('.card-back');
+            
+            if (front.classList.contains('hidden')) {
+                front.classList.remove('hidden');
+                front.classList.add('flex');
+                back.classList.add('hidden');
+                back.classList.remove('flex');
+            } else {
+                front.classList.add('hidden');
+                front.classList.remove('flex');
+                back.classList.remove('hidden');
+                back.classList.add('flex');
+            }
+        }
+
+        // Order Modal Logic
+        const modal = document.getElementById('orderModal');
+        const modalProductName = document.getElementById('modalProductName');
+        const modalPriceAmount = document.getElementById('modalPriceAmount');
+        const whatsappLink = document.getElementById('whatsappLink');
+
+        function openOrderModal(productName = "Software License", productPrice = "Check Pricing") {
+            modalProductName.innerText = productName;
+            
+            if (!productPrice.includes('Check') && !productPrice.includes('BDT') && !productPrice.includes('Win')) {
+                modalPriceAmount.innerText = `৳${productPrice}`;
+            } else {
+                modalPriceAmount.innerText = productPrice;
+            }
+            
+            const message = `Hello, I want to confirm my order for ${productName}.\n\nHere are my details:\nName:\nPhone Number:\nEmail:\nTrxID:`;
+            const encodedMessage = encodeURIComponent(message);
+            whatsappLink.href = `https://wa.me/8801910727242?text=${encodedMessage}`;
+
+            modal.classList.remove('hidden');
+            setTimeout(() => { modal.classList.add('active'); }, 10);
+        }
+
+        function closeOrderModal() {
+            modal.classList.remove('active');
+            setTimeout(() => { modal.classList.add('hidden'); }, 300);
+        }
+
+        // Legal Modal Logic
+        const legalModal = document.getElementById('legalModal');
+
+        function openLegalModal(tabName) {
+            legalModal.classList.remove('hidden');
+            setTimeout(() => { legalModal.classList.add('active'); }, 10);
+            switchLegalTab(tabName);
+        }
+
+        function closeLegalModal() {
+            legalModal.classList.remove('active');
+            setTimeout(() => { legalModal.classList.add('hidden'); }, 300);
+        }
+
+        function switchLegalTab(tabName) {
+            // Hide all content
+            document.querySelectorAll('.legal-content').forEach(el => el.classList.add('hidden'));
+            // Remove active style from buttons
+            document.querySelectorAll('.legal-tab-btn').forEach(el => el.classList.remove('active', 'bg-gray-200', 'text-brand-navy'));
+            
+            // Show content
+            document.getElementById(`content-${tabName}`).classList.remove('hidden');
+            // Activate button
+            const btn = document.getElementById(`btn-${tabName}`);
+            btn.classList.add('active', 'bg-gray-200', 'text-brand-navy');
+        }
+
+        // Close modals on outside click
+        window.addEventListener('click', function(e) {
+            if (e.target === modal) closeOrderModal();
+            if (e.target === legalModal) closeLegalModal();
+        });
+    </script>
+
+</body>
+</html>

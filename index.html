@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ThinkLab Analytics</title>
+    <!-- Added Favicon for Browser Tab -->
+    <link rel="icon" href="images/icon.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -84,6 +86,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center gap-3">
+                    <!-- Reverted to Font Awesome Icon in Navbar -->
                     <div class="w-10 h-10 bg-brand-navy rounded-lg flex items-center justify-center text-white shadow-lg">
                         <i class="fa-solid fa-brain text-xl"></i>
                     </div>
@@ -620,8 +623,11 @@
     <!-- Footer -->
     <footer class="bg-white border-t border-gray-100 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-12">
-                <div class="col-span-1 md:col-span-2">
+            <!-- Updated Grid to 12 columns for better spacing control -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+                
+                <!-- Brand Section: Takes 5/12 columns (approx 42%) -->
+                <div class="md:col-span-5">
                     <div class="flex items-center gap-2 mb-4">
                         <div class="w-8 h-8 bg-brand-navy rounded flex items-center justify-center text-white">
                             <i class="fa-solid fa-brain text-sm"></i>
@@ -630,18 +636,22 @@
                     </div>
                     <p class="text-gray-500 max-w-sm">Empowering academic research in Dhaka with premium analysis software and support.</p>
                 </div>
-                <div>
+
+                <!-- Contact Section: Takes 4/12 columns (approx 33%) - Increased space for email -->
+                <div class="md:col-span-4">
                     <h4 class="font-bold text-gray-900 mb-4">Contact</h4>
                     <ul class="space-y-2 text-gray-600">
                         <li><i class="fa-brands fa-whatsapp w-6"></i> +880 1910-727242</li>
-                        <li><i class="fa-solid fa-envelope w-6"></i> support@thinklab.com</li>
+                        <!-- Email should now fit on one line -->
+                        <li class="whitespace-nowrap"><i class="fa-solid fa-envelope w-6"></i> thinklab.software@gmail.com</li>
                         <li><i class="fa-solid fa-location-dot w-6"></i> Dhaka, Bangladesh</li>
                     </ul>
                 </div>
-                <div>
+
+                <!-- Legal Section: Takes 3/12 columns (approx 25%) -->
+                <div class="md:col-span-3">
                     <h4 class="font-bold text-gray-900 mb-4">Legal</h4>
                     <ul class="space-y-2 text-gray-600">
-                        <!-- Updated: Added event.preventDefault() to stop page jumping -->
                         <li><a href="#" onclick="event.preventDefault(); openLegalModal('privacy')" class="hover:text-brand-navy">Privacy Policy</a></li>
                         <li><a href="#" onclick="event.preventDefault(); openLegalModal('terms')" class="hover:text-brand-navy">Terms of Service</a></li>
                         <li><a href="#" onclick="event.preventDefault(); openLegalModal('refund')" class="hover:text-brand-navy">Refund Policy</a></li>

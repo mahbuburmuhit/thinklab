@@ -120,15 +120,15 @@
                         ThinkLab Analytics presents an exclusive opportunity to equip your research with industry standards. Secure lifetime licenses for <strong>SmartPLS 4.1 (Latest)</strong> and <strong>NVivo 15 (Latest)</strong> at preferential academic rates.
                     </p>
                     
-                    <!-- Updated Button Container: Single row on desktop, stacked on mobile -->
-                    <div class="flex flex-col sm:flex-row flex-wrap gap-4">
+                    <!-- BUTTONS GROUP 1: DESKTOP ONLY (Hidden on Mobile) -->
+                    <div class="hidden lg:flex flex-row flex-wrap gap-4">
                         <a href="#pricing" class="btn-primary px-8 py-4 rounded-lg font-bold text-center flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition">
                             View Offer Price <i class="fa-solid fa-arrow-right"></i>
                         </a>
                         <a href="#catalog" class="px-8 py-4 rounded-lg font-bold text-brand-navy border-2 border-brand-navy/20 hover:bg-blue-50 text-center transition flex items-center justify-center">
                             Browse Catalog
                         </a>
-                        <a href="https://wa.me/8801944238482" target="_blank" class="px-8 py-4 rounded-lg font-bold text-green-700 bg-white border-2 border-green-500 hover:bg-green-50 hover:shadow-md transition flex items-center justify-center gap-2">
+                        <a href="https://wa.me/8801944238482?text=Hello%2C%20I%20am%20interested%20in%20ThinkLab%20software." target="_blank" class="px-8 py-4 rounded-lg font-bold text-green-700 bg-white border-2 border-green-500 hover:bg-green-50 hover:shadow-md transition flex items-center justify-center gap-2">
                             <i class="fa-brands fa-whatsapp text-xl"></i> Chat on WhatsApp
                         </a>
                     </div>
@@ -221,8 +221,21 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
+
+                <!-- BUTTONS GROUP 2: MOBILE ONLY (Visible on Mobile, Below Images) -->
+                <div class="mt-8 flex flex-col gap-4 lg:hidden w-full">
+                    <a href="#pricing" class="btn-primary px-8 py-4 rounded-lg font-bold text-center flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition">
+                        View Offer Price <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <a href="#catalog" class="px-8 py-4 rounded-lg font-bold text-brand-navy border-2 border-brand-navy/20 hover:bg-blue-50 text-center transition flex items-center justify-center">
+                        Browse Catalog
+                    </a>
+                    <a href="https://wa.me/8801944238482?text=Hello%2C%20I%20am%20interested%20in%20ThinkLab%20software." target="_blank" class="px-8 py-4 rounded-lg font-bold text-green-700 bg-white border-2 border-green-500 hover:bg-green-50 hover:shadow-md transition flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> Chat on WhatsApp
+                    </a>
+                </div>
+
             </div>
         </div>
     </section>
@@ -319,6 +332,7 @@
                     <div class="absolute top-0 right-0 bg-blue-600 px-3 py-1 rounded-bl-lg text-xs font-bold text-white uppercase tracking-wider shadow-md group-hover:bg-blue-700 transition">Standard</div>
                     <div class="flex flex-col items-center text-center gap-4 mb-6">
                         <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center p-2 shadow-sm border border-blue-100 group-hover:scale-105 transition duration-300">
+                            <!-- UPDATED: Local Image -->
                             <img src="images/smartpls.png" alt="SmartPLS Logo" class="w-full h-full object-contain">
                         </div>
                         <div>
@@ -349,7 +363,8 @@
                 </div>
 
                 <!-- Ultimate Bundle Card (New) -->
-                <div class="bg-gradient-to-b from-white to-indigo-50 rounded-2xl p-6 shadow-2xl border-2 border-indigo-200 hover:border-indigo-500 transform scale-105 z-10 transition duration-300 relative overflow-hidden group">
+                <!-- Removed transform scale-105 for mobile/tablet (use lg:scale-105) -->
+                <div class="bg-gradient-to-b from-white to-indigo-50 rounded-2xl p-6 shadow-2xl border-2 border-indigo-200 hover:border-indigo-500 lg:transform lg:scale-105 z-10 transition duration-300 relative overflow-hidden group">
                     <div class="absolute top-0 right-0 bg-indigo-600 px-4 py-1.5 rounded-bl-lg text-xs font-bold text-white uppercase tracking-wider shadow-md group-hover:bg-indigo-700 transition">Best Value</div>
                     <div class="flex flex-col items-center text-center gap-4 mb-6">
                         <div class="flex -space-x-4 items-center justify-center">
@@ -393,6 +408,7 @@
                      <div class="absolute top-0 right-0 bg-green-600 px-3 py-1 rounded-bl-lg text-xs font-bold text-white uppercase tracking-wider shadow-md group-hover:bg-green-700 transition">Standard</div>
                     <div class="flex flex-col items-center text-center gap-4 mb-6">
                         <div class="w-16 h-16 bg-white rounded-xl flex items-center justify-center p-2 shadow-sm border border-green-100 group-hover:scale-105 transition duration-300">
+                            <!-- UPDATED: Local Image -->
                             <img src="images/nvivo.png" alt="NVivo Logo" class="w-full h-full object-contain">
                         </div>
                         <div>

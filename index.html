@@ -120,15 +120,15 @@
                         ThinkLab Analytics presents an exclusive opportunity to equip your research with industry standards. Secure lifetime licenses for <strong>SmartPLS 4.1 (Latest)</strong> and <strong>NVivo 15 (Latest)</strong> at preferential academic rates.
                     </p>
                     
-                    <!-- Updated Button Container: Single row on desktop, stacked on mobile -->
-                    <div class="flex flex-col sm:flex-row flex-wrap gap-4">
+                    <!-- Updated Button Container: VISIBLE ON DESKTOP ONLY (hidden lg:flex) -->
+                    <div class="hidden lg:flex flex-row flex-wrap gap-4">
                         <a href="#pricing" class="btn-primary px-8 py-4 rounded-lg font-bold text-center flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition">
                             View Offer Price <i class="fa-solid fa-arrow-right"></i>
                         </a>
                         <a href="#catalog" class="px-8 py-4 rounded-lg font-bold text-brand-navy border-2 border-brand-navy/20 hover:bg-blue-50 text-center transition flex items-center justify-center">
                             Browse Catalog
                         </a>
-                        <a href="https://wa.me/8801944238482?text=Hello%2C%20I%20am%20interested%20in%20ThinkLab%20software." target="_blank" class="px-8 py-4 rounded-lg font-bold text-green-700 bg-white border-2 border-green-500 hover:bg-green-50 hover:shadow-md transition flex items-center justify-center gap-2">
+                        <a href="https://wa.me/8801944238482?text=Hello!%20I%20am%20interested%20in%20......." target="_blank" class="px-8 py-4 rounded-lg font-bold text-green-700 bg-white border-2 border-green-500 hover:bg-green-50 hover:shadow-md transition flex items-center justify-center gap-2">
                             <i class="fa-brands fa-whatsapp text-xl"></i> Chat on WhatsApp
                         </a>
                     </div>
@@ -232,7 +232,7 @@
                     <a href="#catalog" class="px-8 py-4 rounded-lg font-bold text-brand-navy border-2 border-brand-navy/20 hover:bg-blue-50 text-center transition flex items-center justify-center">
                         Browse Catalog
                     </a>
-                    <a href="https://wa.me/8801944238482?text=Hello%2C%20I%20am%20interested%20in%20ThinkLab%20software." target="_blank" class="px-8 py-4 rounded-lg font-bold text-green-700 bg-white border-2 border-green-500 hover:bg-green-50 hover:shadow-md transition flex items-center justify-center gap-2">
+                    <a href="https://wa.me/8801944238482?text=Hello!%20I%20am%20interested%20in%20......." target="_blank" class="px-8 py-4 rounded-lg font-bold text-green-700 bg-white border-2 border-green-500 hover:bg-green-50 hover:shadow-md transition flex items-center justify-center gap-2">
                         <i class="fa-brands fa-whatsapp text-xl"></i> Chat on WhatsApp
                     </a>
                 </div>
@@ -899,7 +899,7 @@
                 modalPriceAmount.innerText = productPrice;
             }
             
-            const message = `Hello, I want to confirm my order for ${productName}.\n\nHere are my details:\nName:\nPhone Number:\nEmail:\nTrxID:`;
+            const message = `Hello! I am interested in .......`;
             const encodedMessage = encodeURIComponent(message);
             whatsappLink.href = `https://wa.me/8801944238482?text=${encodedMessage}`;
 
